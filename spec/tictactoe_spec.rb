@@ -17,6 +17,14 @@ describe Board do
 		@board.markO(1,1)
 		@board.check(1,1).should == "O"
 	end
+
+	it "should show the status of the game" do
+		@board.markX(0,0)
+		@board.status.should == "No result yet."
+		@board.markX(1,0)
+		@board.markX(2,0)
+		@board.status.should == "X won the match."
+	end
 end	
 
 	
