@@ -44,12 +44,11 @@ class Board
 	end
 
 	def display
-		a = Array.new
-		1.upto 3 do |i|
-			1.upto 3 do |j|
-				a.insert(@board[i][j])
+		@rows.times do |i|
+			puts
+			@columns.times do |j|
+				print "#{@board[j][i]}\t"
 			end
 		end
-		return a
 	end
 end
