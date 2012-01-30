@@ -20,6 +20,7 @@ describe Board do
 
 	it "should not allow invalid inputs" do
 		@board.markX(3,1).should == "Not valid input."
+		@board.markO(1,3).should == "Not valid input."
 	end
 
 	it "should show the status of the game" do
