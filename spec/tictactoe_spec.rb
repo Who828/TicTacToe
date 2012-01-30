@@ -18,6 +18,10 @@ describe Board do
 		@board.check(1,1).should == "O"
 	end
 
+	it "should not allow invalid inputs" do
+		@board.markX(3,1).should == "Not valid input."
+	end
+
 	it "should show the status of the game" do
 		@board.markX(0,0)
 		@board.status.should == "No result yet."

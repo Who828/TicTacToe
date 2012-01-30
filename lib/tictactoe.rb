@@ -9,17 +9,37 @@ class Board
 	def length
 		@board.length
 	end
-	
+
+	def valid? x,y
+		if ( x < 3 && y < 3)
+			true
+		else
+			false
+		end
+	end
+
 	def markX x,y
-		@board[x][y] = "X"
+		if valid? x,y
+			@board[x][y] = "X"
+		else
+			return "Not valid input."
+		end
 	end
 
 	def markO x,y
-		@board[x][y] = "O"
+		if valid? x,y
+			@board[x][y] = "O"
+		else
+			return "Not valid input."
+		end
 	end
 
 	def check x,y
-		@board[x][y]
+		if valid? x,y
+			@board[x][y]
+		else
+			return "Not valid input."
+		end
 	end
 
 	def status
