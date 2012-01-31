@@ -1,10 +1,10 @@
 require 'board'
 
 class Game
-attr_accessor :board
+	attr_accessor :board
 	
 	def initialize size
-		@board = Board.new(3)
+		@board = Board.new(size)
 	end
 
 	def move symbol,x,y

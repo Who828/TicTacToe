@@ -2,14 +2,15 @@ require 'player'
 
 describe Player do
 	
-	before(:each) do
-		@game = Game.new(3)
-		@player = Player.new(@game,"X")
+	let(:game) { Game.new(3) }
+	let(:player) { Player.new(game,"X") }
+
+	it "checks the initialization" do
+		player.symbol.should == "X"
 	end
 
-	it "should check the initialization" do
-		@player.symbol.should == "X"
-		@player.play(0,1)
-		@game.board.isMarked?(0,1).should be_true
+	it "plays a square" do
+		player.play(0,1)
+		game.board.marked?(0,1).should be_true
 	end
 end
