@@ -1,12 +1,14 @@
 require 'game'
 require 'player'
+require 'game_init'
 
 describe Game do
-	let(:game) { Game.new(3) }
-	let(:player) { Player.new(game, "X")}
+    let(:game_init) { Game_Init.new }
+	let(:game) {game_init.game}
+	let(:player) {game_init.player_x}
 
 	it "initalizes the size" do
-		Game.new(4).board.length.should == 4
+		game.board.length.should == 3
 	end
 
 	it "announces the result" do
