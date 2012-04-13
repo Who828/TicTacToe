@@ -1,7 +1,7 @@
 class Board
 
 	def initialize size
-		@board = Array.new(size) { Array.new(size) }
+		@board = [[]]
 	end
 
 	def length
